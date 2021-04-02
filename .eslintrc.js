@@ -10,16 +10,10 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   rules: {
-    'prettier/prettier': 'error',
-    'comma-dangle': [0],
+    'comma-dangle': [1, 'never'],
     'arrow-parens': ['error', 'as-needed'],
-    'arrow-body-style': [
-      'error',
-      'as-needed',
-      { requireReturnForObjectLiteral: true }
-    ],
     'react/prefer-es6-class': [1, 'always'],
-    'react/display-name': [1],
+    'react/display-name': [0],
     'react/prop-types': [0]
   }
 };
