@@ -1,54 +1,17 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { ChatScrollView, ChatBar } from '../../components';
-import { UserPic } from '../../components/common';
+import { ChatScrollView, ChatBar, Message } from '../../components';
 import { HomeScreenProps } from './types';
 import { styles } from './styles';
+import { messages } from '../../utils/dataSource';
 
 const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
   return (
     <View style={styles.container}>
       <ChatScrollView>
-        <Text style={styles.title}>This is the home screen!</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>Sdfasdfasdfasd</Text>
-        <Text style={styles.title}>sdfsd</Text>
-        <UserPic source={require('../../assets/png/max-kalik.png')} />
+        {messages.map((msgProps, i) => (
+          <Message key={i} {...msgProps} />
+        ))}
       </ChatScrollView>
       <ChatBar navigation={navigation} />
     </View>

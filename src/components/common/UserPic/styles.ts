@@ -12,7 +12,7 @@ export const styles = StyleSheet.create<Styles>({
     height: 40
   },
   medium: {
-    borderRadius: 15,
+    borderRadius: 13,
     width: 35,
     height: 35
   }
