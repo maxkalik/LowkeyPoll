@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TextInput, KeyboardAvoidingView } from 'react-native';
-import { TouchableIcon } from '../../components/common';
+import { TouchableIcon } from '../common';
 import { styles } from './styles';
 import { ChatBarType } from './types';
 

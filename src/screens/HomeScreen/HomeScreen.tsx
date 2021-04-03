@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, View, TextInput, KeyboardAvoidingView } from 'react-native';
+import { Text, View } from 'react-native';
 import { ChatScrollView, ChatBar } from '../../components';
-import { TouchableIcon } from '../../components/common';
+import { UserPic } from '../../components/common';
 import { HomeScreenProps } from './types';
 import { styles } from './styles';
 
@@ -48,6 +48,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
         <Text style={styles.title}>Sdfasdfasdfasd</Text>
         <Text style={styles.title}>Sdfasdfasdfasd</Text>
         <Text style={styles.title}>sdfsd</Text>
+        <UserPic source={require('../../assets/png/max-kalik.png')} />
       </ChatScrollView>
       <ChatBar navigation={navigation} />
     </View>

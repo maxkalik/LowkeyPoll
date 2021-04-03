@@ -11,5 +11,5 @@ export const styles = StyleSheet.create<Styles>({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  title: { fontSize: 30 }
+  title: { fontSize: 30, fontFamily: 'Poppins-Medium' }
 });
