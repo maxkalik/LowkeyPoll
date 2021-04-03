@@ -1,5 +1,5 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
-import { fonts } from '../../utils/constants';
+import { colors, fonts } from '../../utils/constants';
 
 interface Styles {
   container: ViewStyle;
@@ -19,11 +19,13 @@ export const styles = StyleSheet.create<Styles>({
   },
   textContainer: { flex: 1, paddingLeft: 14, paddingTop: 3 },
   username: {
+    color: colors.COLOR_SECONDARY,
     fontSize: 12,
     fontFamily: fonts.POPPINS.semibold,
     paddingBottom: 2
   },
   text: {
+    color: colors.COLOR_FOREGROUND,
     fontSize: 15,
     lineHeight: 22,
     fontFamily: fonts.POPPINS.regular,

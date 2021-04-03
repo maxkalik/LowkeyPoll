@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
-import { ScrollView, RefreshControl } from 'react-native';
+import { View, ScrollView, RefreshControl } from 'react-native';
+import { colors } from '../../../src/utils/constants';
 import { wait } from './helpers';
 import { styles } from './styles';
 
@@ -13,7 +14,11 @@ const ChatScrollView: React.FC = ({ children }): JSX.Element => {
   }, []);
 
   const refreshControl = (
-    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+    <RefreshControl
+      tintColor={colors.COLOR_FOREGROUND}
+      refreshing={refreshing}
+      onRefresh={onRefresh}
+    />
   );
 
   const onContentSizeChange = () => {
@@ -24,6 +29,7 @@ const ChatScrollView: React.FC = ({ children }): JSX.Element => {
     <ScrollView
       style={styles.container}
       ref={scrollViewRef}
+      contentInset={{ bottom: 40 }}
       onContentSizeChange={onContentSizeChange}
       showsVerticalScrollIndicator={false}
       refreshControl={refreshControl}>

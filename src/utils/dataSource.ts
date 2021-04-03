@@ -15,8 +15,8 @@ export const messages = [
     text: 'I’m in! Also could grab some sandwiches if you want 🥪'
   },
   {
-    userpicSource: require('../assets/png/max-kalik.png'),
-    username: 'Max Kalik',
+    userpicSource: require('../assets/png/elza-mitre.png'),
+    username: 'Elza Mitre',
     text:
       'I’m in also! Mike’s Diner would be a good choice 🔥🔥🔥 how about everyone else? Any ideas?'
   },

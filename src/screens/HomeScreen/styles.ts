@@ -1,15 +1,15 @@
-import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
+import { colors } from '../../../src/utils/constants';
 
 interface Styles {
   container: ViewStyle;
-  title: TextStyle;
 }
 
 export const styles = StyleSheet.create<Styles>({
   container: {
+    backgroundColor: colors.COLOR_BACKGROUND,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  title: { fontSize: 30, fontFamily: 'Poppins-Medium' }
+  }
 });

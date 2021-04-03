@@ -6,6 +6,7 @@ interface Styles {
 
 export const styles = StyleSheet.create<Styles>({
   container: {
-    width: '100%'
+    width: '100%',
+    paddingVertical: 20
   }
 });
