@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from 'react';
 import { ScrollView, RefreshControl } from 'react-native';
 import { wait } from './helpers';
 
-const Messages: React.FC = ({ children }): JSX.Element => {
+const ChatScrollView: React.FC = ({ children }): JSX.Element => {
   const [refreshing, setRefreshing] = useState(false);
   const scrollViewRef: React.RefObject<ScrollView> = useRef(null);
 
@@ -30,4 +30,4 @@ const Messages: React.FC = ({ children }): JSX.Element => {
   );
 };
 
-export default Messages;
+export default ChatScrollView;
