@@ -7,7 +7,6 @@ const TouchableText: React.FC<TouchableTextProps> = ({
   onPress,
   style,
   weight,
-  // foregroundColor,
   title
 }): JSX.Element => (
   <TouchableOpacity style={styles.container} onPress={onPress}>

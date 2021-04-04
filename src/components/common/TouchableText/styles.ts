@@ -10,11 +10,7 @@ interface Styles {
 }
 
 export const styles = StyleSheet.create<Styles>({
-  container: {
-    // paddingVertical: 4
-    // borderWidth: 1,
-    // borderColor: 'white'
-  },
+  container: {},
   text: {
     color: colors.COLOR_BLUE
   },

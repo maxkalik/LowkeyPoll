@@ -11,7 +11,6 @@ interface Styles {
 
 export const styles = StyleSheet.create<Styles>({
   container: {
-    // borderWidth: 1,
     width: '100%',
     flexDirection: 'row',
     flexWrap: 'nowrap',
