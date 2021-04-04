@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar, KeyboardAvoidingView } from 'react-native';
+import { StatusBar, KeyboardAvoidingView, SafeAreaView } from 'react-native';
 import { ChatScrollView, ChatBar, Message } from '../../components';
 import { HomeScreenProps } from './types';
 import { styles } from './styles';
@@ -7,7 +7,7 @@ import { messages } from '../../utils/dataSource';
 
 const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <KeyboardAvoidingView
         keyboardVerticalOffset={100}
@@ -20,7 +20,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
         </ChatScrollView>
         <ChatBar navigation={navigation} />
       </KeyboardAvoidingView>
-    </View>
+    </SafeAreaView>
   );
 };
 

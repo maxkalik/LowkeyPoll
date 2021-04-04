@@ -13,5 +13,10 @@ export const styles = StyleSheet.create<Styles>({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  keyboardAvoidingView: { width: '100%' }
+  keyboardAvoidingView: {
+    paddingTop: 40,
+    width: '100%',
+    flex: 1,
+    justifyContent: 'flex-end'
+  }
 });
