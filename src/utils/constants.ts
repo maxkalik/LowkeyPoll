@@ -3,7 +3,8 @@ export const colors = {
   COLOR_FOREGROUND: '#FEFEFE',
   COLOR_SECONDARY: '#7E7A9A',
   COLOR_DARK: '#1C1A2A',
-  COLOR_DIM: '#2E2C3C'
+  COLOR_DIM: '#2E2C3C',
+  COLOR_BLUE: '#1C6EF2'
 };
 
 export const fonts = {

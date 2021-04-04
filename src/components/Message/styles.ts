@@ -6,6 +6,7 @@ interface Styles {
   username: TextStyle;
   text: TextStyle;
   textContainer: ViewStyle;
+  userLink: ViewStyle;
 }
 
 export const styles = StyleSheet.create<Styles>({
@@ -31,5 +32,6 @@ export const styles = StyleSheet.create<Styles>({
     fontFamily: fonts.POPPINS.regular,
     flexWrap: 'wrap',
     width: '100%'
-  }
+  },
+  userLink: { fontSize: 15, lineHeight: 15, marginBottom: -3 }
 });

@@ -13,6 +13,6 @@ export const styles = StyleSheet.create<Styles>({
     shadowRadius: 0,
     shadowColor: 'transparent'
   },
-  headerRightContainerStyle: { padding: 15 },
-  headerLeftContainerStyle: { padding: 15 }
+  headerRightContainerStyle: { padding: 20 },
+  headerLeftContainerStyle: { padding: 20 }
 });
