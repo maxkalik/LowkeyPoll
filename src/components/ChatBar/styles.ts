@@ -1,20 +1,13 @@
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 import { colors, fonts } from '../../../src/utils/constants';
 
 interface Styles {
-  general: ViewStyle;
-  hstack: ViewStyle;
   container: ViewStyle;
   textInput: ViewStyle;
 }
 
 export const styles = StyleSheet.create<Styles>({
-  general: { width: '100%' },
   container: {
-    height: 80,
-    backgroundColor: colors.COLOR_BACKGROUND
-  },
-  hstack: {
     flexDirection: 'row',
     paddingHorizontal: 15,
     paddingTop: 5,

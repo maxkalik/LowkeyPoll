@@ -3,6 +3,7 @@ import { colors } from '../../../src/utils/constants';
 
 interface Styles {
   container: ViewStyle;
+  keyboardAvoidingView: ViewStyle;
 }
 
 export const styles = StyleSheet.create<Styles>({
@@ -11,5 +12,6 @@ export const styles = StyleSheet.create<Styles>({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
-  }
+  },
+  keyboardAvoidingView: { width: '100%' }
 });
