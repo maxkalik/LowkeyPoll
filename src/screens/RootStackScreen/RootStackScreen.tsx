@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
 import { Button, View, Text, NativeModules } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { TouchableIcon, UserPic, HeaderTitle } from '../../components/common';
 import { RootStackParamList, RootStackScreenProps } from './types';
+import { styles } from './styles';
 
 const RootStack = createStackNavigator<RootStackParamList>();
+const HeaderLeftComponent = () => <TouchableIcon name="close large" />;
+const HeaderTitleComponent = () => (
+  <HeaderTitle title="Lowkey Squad" subTitle="1 member • 1 online" />
+);
+const HeaderRightComponent = () => (
+  <UserPic
+    size="medium"
+    source={require('../../assets/png/greta-priede.png')}
+  />
+);
+
 
 const RootStackScreen: React.FC<RootStackScreenProps> = ({
   mainStack,
@@ -44,20 +57,18 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
           //     />
           //   </View>
           // ),
-          headerTitle: () => (
-            <View>
-              <Text>New Poll</Text>
-            </View>
-          ),
+          headerRightContainerStyle: styles.headerRightContainerStyle,
+          headerLeftContainerStyle: styles.headerLeftContainerStyle,
+          headerStyle: styles.headerStyle,
+          headerTitle: HeaderTitleComponent,
           headerLeft: () => (
-            <View>
-              <Button onPress={() => navigation.goBack()} title="X" />
-            </View>
+            <TouchableIcon
+              name="close large"
+              onPress={() => navigation.goBack()}
+            />
           ),
-          headerRight: () => (
-            <Button onPress={() => console.log('pressed')} title="Create" />
-          ),
-          headerTitleContainerStyle: { borderWidth: 1, marginHorizontal: 0 }
+          headerRight: HeaderRightComponent
+          // headerTitleContainerStyle: { borderWidth: 1, marginHorizontal: 0 }
         })}
       />
     </RootStack.Navigator>
