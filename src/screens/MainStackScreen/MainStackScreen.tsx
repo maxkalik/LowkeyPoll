@@ -4,17 +4,19 @@ import { MainStackParamList } from './types';
 import HomeScreen from '../HomeScreen/HomeScreen';
 import PollScreen from '../PollScreen/PollScreen';
 import { TouchableIcon, UserPic, HeaderTitle } from '../../components/common';
-import { colors } from '../../../src/utils/constants';
+import { styles } from './styles';
 
 const MainStack = createStackNavigator<MainStackParamList>();
-
-const styles = {
-  headerStyle: {
-    backgroundColor: colors.COLOR_DARK,
-    shadowRadius: 0,
-    shadowColor: 'transparent'
-  }
-};
+const HeaderLeftComponent = () => <TouchableIcon name="close large" />;
+const HeaderTitleComponent = () => (
+  <HeaderTitle title="Lowkey Squad" subTitle="1 member • 1 online" />
+);
+const HeaderRightComponent = () => (
+  <UserPic
+    size="medium"
+    source={require('../../assets/png/greta-priede.png')}
+  />
+);
 
 const MainStackScreen: React.FC = (): JSX.Element => (
   <MainStack.Navigator>
@@ -22,18 +24,11 @@ const MainStackScreen: React.FC = (): JSX.Element => (
       name="Home"
       component={HomeScreen}
       options={{
-        headerLeft: () => <TouchableIcon name="close large" />,
-        headerTitle: () => (
-          <HeaderTitle title="Lowkey Squad" subTitle="1 member • 1 online" />
-        ),
-        headerRight: () => (
-          <UserPic
-            size="medium"
-            source={require('../../assets/png/greta-priede.png')}
-          />
-        ),
-        headerRightContainerStyle: { padding: 15 },
-        headerLeftContainerStyle: { padding: 15 },
+        headerLeft: HeaderLeftComponent,
+        headerTitle: HeaderTitleComponent,
+        headerRight: HeaderRightComponent,
+        headerRightContainerStyle: styles.headerRightContainerStyle,
+        headerLeftContainerStyle: styles.headerLeftContainerStyle,
         headerStyle: styles.headerStyle
       }}
     />

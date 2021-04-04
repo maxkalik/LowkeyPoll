@@ -3,25 +3,30 @@ import { Text, View, TextInput, KeyboardAvoidingView } from 'react-native';
 import { TouchableIcon } from '../common';
 import { styles } from './styles';
 import { ChatBarType } from './types';
+import { colors } from '../../../src/utils/constants';
 
 const ChatBar: React.FC<ChatBarType> = ({ navigation }) => {
   return (
     <KeyboardAvoidingView
-      keyboardVerticalOffset={80}
+      keyboardVerticalOffset={60}
       behavior="position"
       style={styles.general}
       contentContainerStyle={styles.container}>
-      <TouchableIcon
-        name="addon"
-        foregroundColor="black"
-        onPress={() => navigation.navigate('Modal')}
-      />
-      <TextInput
-        style={styles.textInput}
-        onChangeText={value => console.log(value)}
-        value="Message"
-      />
-      <TouchableIcon name="camera" foregroundColor="black" />
+      <View style={styles.hstack}>
+        <TouchableIcon
+          name="addon"
+          onPress={() => navigation.navigate('Modal')}
+        />
+        <TextInput
+          style={styles.textInput}
+          onChangeText={value => console.log(value)}
+          placeholder="Message"
+          placeholderTextColor={colors.COLOR_SECONDARY}
+          keyboardAppearance="dark"
+          // value="Message"
+        />
+        <TouchableIcon name="camera" />
+      </View>
     </KeyboardAvoidingView>
   );
 };
