@@ -1,4 +1,5 @@
 import { StyleSheet, ViewStyle } from 'react-native';
+import { colors } from '../../../src/utils/constants';
 
 interface Styles {
   container: ViewStyle;
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create<Styles>({
   },
   switchView: {
     transform: [{ scaleX: 0.9 }, { scaleY: 0.9 }],
-    borderColor: '#7E7A9A'
+    borderColor: colors.COLOR_SECONDARY
   },
   withBorder: {
     borderWidth: 1
@@ -25,3 +26,11 @@ export const styles = StyleSheet.create<Styles>({
     borderWidth: 0
   }
 });
+
+export const iosBackgroundColor = colors.COLOR_DARK;
+
+export const trackColor = { false: colors.COLOR_DARK, true: colors.COLOR_BLUE };
+
+export const getThumbColor = (value: boolean): string => {
+  return value ? colors.COLOR_FOREGROUND : colors.COLOR_SECONDARY;
+};

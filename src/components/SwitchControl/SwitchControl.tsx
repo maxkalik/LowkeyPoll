@@ -1,7 +1,12 @@
 import React from 'react';
 import { View, Switch } from 'react-native';
 import { SwitchControlProps } from './types';
-import { styles } from './styles';
+import {
+  styles,
+  trackColor,
+  getThumbColor,
+  iosBackgroundColor
+} from './styles';
 import { IconLabel } from '..';
 
 const SwitchControl: React.FC<SwitchControlProps> = ({
@@ -19,9 +24,9 @@ const SwitchControl: React.FC<SwitchControlProps> = ({
     <View style={[styles.container, style]}>
       <IconLabel iconName={iconName} title={title} />
       <Switch
-        trackColor={{ false: '#1C1A2A', true: '#1C6EF2' }}
-        thumbColor={value ? 'white' : '#7E7A9A'}
-        ios_backgroundColor="1C1A2A"
+        trackColor={trackColor}
+        thumbColor={getThumbColor(value)}
+        ios_backgroundColor={iosBackgroundColor}
         style={switchStyles}
         onValueChange={onValueChange}
         value={value}

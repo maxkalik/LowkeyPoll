@@ -1,34 +1,47 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { WidgetContainer, WidgetHeader } from '..';
-import { users } from '../../utils/dataSource';
+import {
+  PollItemProps,
+  PollWidgetContentProps,
+  PollWidgetProps
+} from './types';
 import { styles } from './styles';
 
-const PollItem: React.FC = (): JSX.Element => (
-  <View style={styles.pollItemContainer}>
-    <Text style={styles.pollItemText}>Poll Item</Text>
-  </View>
+const PollItem: React.FC<PollItemProps> = ({ text }): JSX.Element => (
+  <TouchableOpacity style={styles.pollItemContainer}>
+    <Text style={styles.pollItemText}>{text}</Text>
+  </TouchableOpacity>
 );
 
-const PollWidgetContent: React.FC = (): JSX.Element => (
+const PollWidgetContent: React.FC<PollWidgetContentProps> = ({
+  title,
+  items
+}): JSX.Element => (
   <View style={styles.content}>
-    <Text style={styles.pollTitle}>
-      What is the greatest NBA team in the history?
-    </Text>
-    <PollItem />
+    <Text style={styles.pollTitle}>{title}</Text>
+    {items.map(item => (
+      <PollItem key={item.text} {...item} />
+    ))}
   </View>
 );
 
-const PollWidget: React.FC = (): JSX.Element => (
+const PollWidget: React.FC<PollWidgetProps> = ({
+  headerUsername,
+  userpicSource,
+  circleLabel,
+  title,
+  items
+}): JSX.Element => (
   <WidgetContainer>
     <WidgetHeader
       title="Public Poll"
-      username="Mila Spencer"
-      userpicSource={users.milaSpencer.userpicSource}
-      circleLabelTitle="votes"
-      circleLabelValue="0"
+      username={headerUsername}
+      userpicSource={userpicSource}
+      circleLabelTitle={circleLabel?.title}
+      circleLabelValue={circleLabel?.value}
     />
-    <PollWidgetContent />
+    <PollWidgetContent title={title} items={items} />
   </WidgetContainer>
 );
 

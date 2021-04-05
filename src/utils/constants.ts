@@ -8,6 +8,11 @@ export const colors = {
   COLOR_PURPLE: '#AC1393'
 };
 
+export const gradients = {
+  GRADIENT_SCREEN: [colors.COLOR_DARK, '#121118', colors.COLOR_BACKGROUND],
+  GRADIENT_WIDGET: ['#A83D7F', '#6F1D7A81', '#03114398']
+};
+
 export const fonts = {
   POPPINS: {
     regular: 'Poppins-Regular',

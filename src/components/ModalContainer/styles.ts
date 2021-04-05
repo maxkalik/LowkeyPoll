@@ -1,5 +1,5 @@
 import { StyleSheet, ViewStyle } from 'react-native';
-import { colors } from '../../../src/utils/constants';
+import { colors, gradients } from '../../../src/utils/constants';
 
 interface Styles {
   container: ViewStyle;
@@ -48,8 +48,4 @@ export const styles = StyleSheet.create<Styles>({
   }
 });
 
-export const gradientColors = [
-  colors.COLOR_DARK,
-  '#121118',
-  colors.COLOR_BACKGROUND
-];
+export const gradientColors = gradients.GRADIENT_SCREEN;
