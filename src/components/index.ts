@@ -6,3 +6,4 @@ export { default as SwitchControl } from './SwitchControl/SwitchControl';
 export { default as LabeledContainer } from './LabeledContainer/LabeledContainer';
 export { default as EditControl } from './EditControl/EditControl';
 export { default as OptionControl } from './OptionControl/OptionControl';
+export { default as ModalContainer } from './ModalContainer/ModalContainer';

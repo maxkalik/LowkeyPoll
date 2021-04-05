@@ -8,14 +8,15 @@ const SwitchControl: React.FC<SwitchControlProps> = ({
   iconName,
   title,
   onValueChange,
-  value
+  value,
+  style
 }): JSX.Element => {
   const switchStyles = [
     styles.switchView,
     value ? styles.withoutBorder : styles.withBorder
   ];
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <IconLabel iconName={iconName} title={title} />
       <Switch
         trackColor={{ false: '#1C1A2A', true: '#1C6EF2' }}

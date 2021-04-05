@@ -1,7 +1,5 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { colors, fonts } from '../../../utils/constants';
-// import { raundViewStyle } from '../../../styles';
-
 interface Styles {
   container: ViewStyle;
   title: TextStyle;
