@@ -7,3 +7,6 @@ export { default as LabeledContainer } from './LabeledContainer/LabeledContainer
 export { default as EditControl } from './EditControl/EditControl';
 export { default as OptionControl } from './OptionControl/OptionControl';
 export { default as ModalContainer } from './ModalContainer/ModalContainer';
+export { default as Poll } from './Poll/Poll';
+export { default as WidgetHeader } from './WidgetHeader/WidgetHeader';
+export { default as WidgetContainer } from './WidgetContainer/WidgetContainer';

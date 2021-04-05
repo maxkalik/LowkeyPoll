@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar, KeyboardAvoidingView, SafeAreaView } from 'react-native';
-import { ChatScrollView, ChatBar, Message } from '../../components';
+import { ChatScrollView, ChatBar, Message, Poll } from '../../components';
 import { HomeScreenProps } from './types';
 import { styles } from './styles';
 import { messages } from '../../utils/dataSource';
@@ -17,6 +17,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
           {messages.map((msgProps, i) => (
             <Message key={i} {...msgProps} />
           ))}
+          <Poll />
         </ChatScrollView>
         <ChatBar navigation={navigation} />
       </KeyboardAvoidingView>

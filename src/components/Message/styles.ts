@@ -14,8 +14,7 @@ export const styles = StyleSheet.create<Styles>({
     width: '100%',
     flexDirection: 'row',
     flexWrap: 'nowrap',
-    paddingVertical: 4,
-    paddingHorizontal: 15
+    paddingVertical: 4
   },
   textContainer: { flex: 1, paddingLeft: 14, paddingTop: 3 },
   username: {
@@ -32,5 +31,10 @@ export const styles = StyleSheet.create<Styles>({
     flexWrap: 'wrap',
     width: '100%'
   },
-  userLink: { fontSize: 15, lineHeight: 15, marginBottom: -3 }
+  userLink: {
+    fontSize: 15,
+    lineHeight: 15,
+    marginBottom: -3,
+    fontFamily: fonts.POPPINS.semibold
+  }
 });

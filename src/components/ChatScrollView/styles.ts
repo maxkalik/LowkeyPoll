@@ -9,7 +9,8 @@ export const styles = StyleSheet.create<Styles>({
   container: {
     flexGrow: 1,
     justifyContent: 'flex-end',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    paddingHorizontal: 15
   },
   scrollView: {
     width: '100%',

@@ -6,6 +6,6 @@ interface Styles {
 
 export const styles = StyleSheet.create<Styles>({
   anonymousSwitchControl: {
-    marginTop: 30
+    marginTop: 24
   }
 });
