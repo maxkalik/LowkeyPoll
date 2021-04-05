@@ -3,8 +3,11 @@ import LinearGradient from 'react-native-linear-gradient';
 import { View, ScrollView } from 'react-native';
 import { ModalScreenProps } from './types';
 import { styles, gradientColors } from './styles';
-import { SwitchControl, EditControl } from '../../../src/components';
-import { Label, TouchableText } from '../../../src/components/common';
+import {
+  SwitchControl,
+  EditControl,
+  OptionControl
+} from '../../../src/components';
 
 const ModalScreen: React.FC<ModalScreenProps> = ({ navigation }) => {
   const [question, setQuestion] = useState('');
@@ -27,10 +30,11 @@ const ModalScreen: React.FC<ModalScreenProps> = ({ navigation }) => {
             onChangeText={value => setQuestion(value)}
             value={question}
           />
-          <View style={styles.controlComponent}>
-            <Label leftText="Options" rightText="0/8" />
-            <TouchableText title="Add an option" />
-          </View>
+          <OptionControl
+            labelLeftTitle="Options"
+            labelRightTitle="0/8"
+            onButtonPress={() => console.log('pressed')}
+          />
           <SwitchControl
             iconName="anonymous"
             title="Anonymous voting"

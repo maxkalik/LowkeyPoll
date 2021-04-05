@@ -44,6 +44,7 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
               title="Create"
               style={styles.headerRight}
               weight="medium"
+              onPress={() => navigation.goBack()}
             />
           )
         })}

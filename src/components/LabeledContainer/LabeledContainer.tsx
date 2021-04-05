@@ -7,10 +7,11 @@ import { LabeledContainerProps } from './types';
 const LabeledContainer: React.FC<LabeledContainerProps> = ({
   leftText,
   rightText,
+  style,
   children
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Label leftText={leftText} rightText={rightText} />
       {children}
     </View>

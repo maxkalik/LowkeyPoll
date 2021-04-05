@@ -6,10 +6,13 @@ import { styles } from './styles';
 const TouchableText: React.FC<TouchableTextProps> = ({
   onPress,
   style,
+  containerStyle,
   weight,
   title
 }): JSX.Element => (
-  <TouchableOpacity style={styles.container} onPress={onPress}>
+  <TouchableOpacity
+    style={[styles.container, containerStyle]}
+    onPress={onPress}>
     <Text style={[styles.text, styles[weight || 'regular'], style]}>
       {title}
     </Text>
