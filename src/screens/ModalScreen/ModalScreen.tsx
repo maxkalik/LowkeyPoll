@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import {
-  Text,
-  View,
-  Button,
-  TextInput,
-  ScrollView,
-  Switch
-} from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { ModalScreenProps } from './types';
 import { styles, gradientColors } from './styles';
-import { Icon26px } from '../../../src/components/icons';
+import { SwitchControl, EditControl } from '../../../src/components';
+import { Label, TouchableText } from '../../../src/components/common';
 
 const ModalScreen: React.FC<ModalScreenProps> = ({ navigation }) => {
+  const [question, setQuestion] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
@@ -23,58 +18,35 @@ const ModalScreen: React.FC<ModalScreenProps> = ({ navigation }) => {
         colors={gradientColors}
         style={styles.gradient}>
         <ScrollView
-          style={{
-            width: '100%'
-          }}
-          contentContainerStyle={{
-            flex: 1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            paddingTop: 60,
-            paddingHorizontal: 20
-          }}>
-          <View
-            style={{ borderWidth: 1, width: '100%', flexDirection: 'column' }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                flexWrap: 'nowrap',
-                justifyContent: 'space-between'
-              }}>
-              <Text>Question</Text>
-              <Text>0/140</Text>
-            </View>
-            <TextInput
-              style={{ borderWidth: 1, width: '100%' }}
-              onChangeText={value => console.log(value)}
-              placeholder="Message"
-              placeholderTextColor="gray"
-              keyboardAppearance="dark"
-              multiline
-              // value="Message"
-            />
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollViewContent}>
+          <EditControl
+            labelLeftTitle="Question"
+            labelRightTitle="0/140"
+            placeholder="Message"
+            onChangeText={value => setQuestion(value)}
+            value={question}
+          />
+          <View style={styles.controlComponent}>
+            <Label leftText="Options" rightText="0/8" />
+            <TouchableText title="Add an option" />
           </View>
-          <View style={{ flexDirection: 'row', flexWrap: 'nowrap' }}>
-            <Icon26px name="anonymous" />
-            <Text style={{ flex: 1 }}>Anonymous voting</Text>
-            <Switch
-              trackColor={{ false: '#1C1A2A', true: '#1C6EF2' }}
-              thumbColor={isEnabled ? 'white' : '#f4f3f4'}
-              ios_backgroundColor="1C1A2A"
-              style={{
-                transform: [{ scaleX: 0.9 }, { scaleY: 0.9 }],
-                borderWidth: isEnabled ? 0 : 1,
-                borderColor: 'white'
-              }}
-              onValueChange={toggleSwitch}
-              value={isEnabled}
-            />
-          </View>
+          <SwitchControl
+            iconName="anonymous"
+            title="Anonymous voting"
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+          <SwitchControl
+            iconName="add more"
+            title="Ability to add more options"
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
         </ScrollView>
       </LinearGradient>
     </View>
   );
-}
-
+};
 
 export default ModalScreen;

@@ -1,10 +1,11 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
-import { colors } from '../../../src/utils/constants';
+import { colors, fonts } from '../../../src/utils/constants';
 
 interface Styles {
   container: ViewStyle;
   gradient: ViewStyle;
-  title: TextStyle;
+  scrollViewContent: ViewStyle;
+  scrollView: ViewStyle;
 }
 
 export const styles = StyleSheet.create<Styles>({
@@ -34,7 +35,21 @@ export const styles = StyleSheet.create<Styles>({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  title: { fontSize: 30, color: colors.COLOR_FOREGROUND }
+  scrollViewContent: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: 2,
+    paddingHorizontal: 20
+  },
+  scrollView: {
+    width: '100%',
+    marginTop: 60
+  }
 });
 
-export const gradientColors = [colors.COLOR_DARK, colors.COLOR_BACKGROUND];
+export const gradientColors = [
+  colors.COLOR_DARK,
+  '#121118',
+  colors.COLOR_BACKGROUND
+];
