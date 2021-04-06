@@ -40,16 +40,16 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LowkeyPoll/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LowkeyPoll/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LowkeyPoll/main.m; sourceTree = "<group>"; };
-		21DE4182514F4EE984A16487 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		21DE4182514F4EE984A16487 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		22F895B974911C935FEA8074 /* libPods-LowkeyPoll-LowkeyPollTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LowkeyPoll-LowkeyPollTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9FE6002AE1079989388045 /* Pods-LowkeyPoll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LowkeyPoll.release.xcconfig"; path = "Target Support Files/Pods-LowkeyPoll/Pods-LowkeyPoll.release.xcconfig"; sourceTree = "<group>"; };
 		4DA49C4E0CA45D88F9095D6C /* libPods-LowkeyPoll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LowkeyPoll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD5BA295551A307C8264F98 /* Pods-LowkeyPoll-LowkeyPollTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LowkeyPoll-LowkeyPollTests.release.xcconfig"; path = "Target Support Files/Pods-LowkeyPoll-LowkeyPollTests/Pods-LowkeyPoll-LowkeyPollTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LowkeyPoll/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A8E2E227F19846E79254F1DE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		A8E2E227F19846E79254F1DE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		E168C1BEBBF70672A09D14B1 /* Pods-LowkeyPoll-LowkeyPollTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LowkeyPoll-LowkeyPollTests.debug.xcconfig"; path = "Target Support Files/Pods-LowkeyPoll-LowkeyPollTests/Pods-LowkeyPoll-LowkeyPollTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F5728554E8634EDE871EE109 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		F5728554E8634EDE871EE109 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,6 @@
 				F5728554E8634EDE871EE109 /* Poppins-SemiBold.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		099F9233DBC0D373B6FCDB9B /* Pods */ = {
@@ -108,7 +107,6 @@
 				E168C1BEBBF70672A09D14B1 /* Pods-LowkeyPoll-LowkeyPollTests.debug.xcconfig */,
 				6AD5BA295551A307C8264F98 /* Pods-LowkeyPoll-LowkeyPollTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -506,6 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P353H6D448;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LowkeyPoll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,6 +531,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P353H6D448;
 				INFOPLIST_FILE = LowkeyPoll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

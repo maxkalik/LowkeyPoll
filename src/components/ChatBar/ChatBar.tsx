@@ -4,6 +4,7 @@ import { TouchableIcon, TouchableText } from '../common';
 import { styles } from './styles';
 import { ChatBarType } from './types';
 import { colors } from '../../../src/utils/constants';
+import { toUpperCase } from '../../utils/toUpperCase';
 
 const ChatBar: React.FC<ChatBarType> = ({ navigation, onPressSend }) => {
   const [text, setText] = useState('');
@@ -50,21 +51,3 @@ const ChatBar: React.FC<ChatBarType> = ({ navigation, onPressSend }) => {
 };
 
 export default ChatBar;
-
-/*
-
-Bitwise solution
-‘a’: 1100001 — ‘A’: 1000001;
-‘b’: 1100010 — ‘B’: 1000010;
-‘c’: 1100011 — ‘C’: 1000011;
-
-*/
-
-const toUpperCase = (str: string): string => {
-  let result = '';
-  for (let i = 0; i < str.length; i++) {
-    const charCode = str.charCodeAt(i) & 223;
-    result += String.fromCharCode(charCode);
-  }
-  return result;
-};

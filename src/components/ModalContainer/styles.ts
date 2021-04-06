@@ -42,4 +42,9 @@ export const styles = StyleSheet.create<ModalContainerStyles>({
   }
 });
 
+export const gradientCoordinate = {
+  start: { x: 0.0, y: 0.0 },
+  end: { x: 0.5, y: 1.0 }
+};
+
 export const gradientColors = gradients.GRADIENT_SCREEN;
