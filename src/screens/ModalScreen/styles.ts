@@ -1,10 +1,7 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { ModalScreenStyles } from './types';
 
-interface Styles {
-  anonymousSwitchControl: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<ModalScreenStyles>({
   anonymousSwitchControl: {
     marginTop: 24
   }

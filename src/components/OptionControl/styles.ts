@@ -1,14 +1,9 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { fonts } from '../../../src/utils/constants';
 import { raundViewStyle } from '../../styles';
+import { OptionControlStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  touchableContainer: ViewStyle;
-  button: TextStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<OptionControlStyles>({
   container: {
     marginTop: 25
   },

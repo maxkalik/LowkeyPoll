@@ -1,13 +1,8 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../../src/utils/constants';
+import { CircleLabel } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  value: TextStyle;
-  description: TextStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<CircleLabel>({
   container: {
     height: 50,
     width: 50,

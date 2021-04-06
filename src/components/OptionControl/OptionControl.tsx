@@ -11,31 +11,26 @@ const OptionControl: React.FC<OptionControlProps> = ({
   onChangeOptionText,
   onCloseOption,
   items
-}) => {
-  return (
-    <LabeledContainer
-      style={styles.container}
-      leftText={labelLeftTitle}
-      rightText={labelRightTitle}>
-      {items.map((text: string, i: React.Key) => {
-        // console.log(items);
-        return (
-          <Option
-            key={i}
-            title={text}
-            onChangeText={value => onChangeOptionText(value, Number(i))}
-            onClosePress={() => onCloseOption(Number(i))}
-          />
-        );
-      })}
-      <TouchableText
-        containerStyle={styles.touchableContainer}
-        style={styles.button}
-        title="Add an option"
-        onPress={onButtonPress}
+}): JSX.Element => (
+  <LabeledContainer
+    style={styles.container}
+    leftText={labelLeftTitle}
+    rightText={labelRightTitle}>
+    {items.map((text: string, i: React.Key) => (
+      <Option
+        key={i}
+        title={text}
+        onChangeText={value => onChangeOptionText(value, Number(i))}
+        onClosePress={() => onCloseOption(Number(i))}
       />
-    </LabeledContainer>
-  );
-};
+    ))}
+    <TouchableText
+      containerStyle={styles.touchableContainer}
+      style={styles.button}
+      title="Add an option"
+      onPress={onButtonPress}
+    />
+  </LabeledContainer>
+);
 
 export default OptionControl;

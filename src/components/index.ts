@@ -10,3 +10,4 @@ export { default as ModalContainer } from './ModalContainer/ModalContainer';
 export { default as PollWidget } from './PollWidget/PollWidget';
 export { default as WidgetHeader } from './WidgetHeader/WidgetHeader';
 export { default as WidgetContainer } from './WidgetContainer/WidgetContainer';
+export { default as ChatItem } from './ChatItem/ChatItem';

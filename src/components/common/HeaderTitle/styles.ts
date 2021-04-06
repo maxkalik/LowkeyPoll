@@ -1,13 +1,9 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../utils/constants';
+import { ChatHeaderTitleStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  title: TextStyle;
-  subTitle: TextStyle;
-}
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<ChatHeaderTitleStyles>({
   container: {
     flexDirection: 'column',
     alignItems: 'center',

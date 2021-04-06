@@ -6,3 +6,10 @@ export interface SwitchControlProps extends IconLabelProps {
   value: boolean;
   style?: ViewStyle;
 }
+
+export interface SwitchControlStyles {
+  container: ViewStyle;
+  switchView: ViewStyle;
+  withBorder: ViewStyle;
+  withoutBorder: ViewStyle;
+}

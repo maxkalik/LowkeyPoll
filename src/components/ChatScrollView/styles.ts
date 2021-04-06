@@ -1,11 +1,7 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { ChatScrollViewStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  scrollView: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<ChatScrollViewStyles>({
   container: {
     flexGrow: 1,
     justifyContent: 'flex-end',
@@ -18,3 +14,5 @@ export const styles = StyleSheet.create<Styles>({
     paddingVertical: 20
   }
 });
+
+export const contentInset = { bottom: 40 };

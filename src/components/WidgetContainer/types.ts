@@ -1,5 +1,6 @@
 import { ViewStyle } from 'react-native';
-export interface ChatScrollViewStyles {
+
+export interface WidgetContainerStyles {
   container: ViewStyle;
-  scrollView: ViewStyle;
+  gradient: ViewStyle;
 }

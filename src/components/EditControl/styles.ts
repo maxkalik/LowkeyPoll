@@ -1,12 +1,9 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../src/utils/constants';
 import { raundViewStyle } from '../../styles';
+import { EditControlStyles } from './types';
 
-interface Styles {
-  textField: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<EditControlStyles>({
   textField: {
     ...raundViewStyle,
     width: '100%',

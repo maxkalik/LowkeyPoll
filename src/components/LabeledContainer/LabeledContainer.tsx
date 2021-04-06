@@ -9,13 +9,11 @@ const LabeledContainer: React.FC<LabeledContainerProps> = ({
   rightText,
   style,
   children
-}) => {
-  return (
-    <View style={[styles.container, style]}>
-      <Label leftText={leftText} rightText={rightText} />
-      {children}
-    </View>
-  );
-};
+}): JSX.Element => (
+  <View style={[styles.container, style]}>
+    <Label leftText={leftText} rightText={rightText} />
+    {children}
+  </View>
+);
 
 export default LabeledContainer;

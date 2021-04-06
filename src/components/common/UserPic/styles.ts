@@ -1,11 +1,7 @@
-import { StyleSheet, ImageStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { UserPicStyles } from './types';
 
-interface Styles {
-  large: ImageStyle;
-  medium: ImageStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<UserPicStyles>({
   large: {
     borderRadius: 15,
     width: 40,

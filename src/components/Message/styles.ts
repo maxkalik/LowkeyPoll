@@ -1,15 +1,8 @@
-import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../utils/constants';
+import { MessageStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  username: TextStyle;
-  text: TextStyle;
-  textContainer: ViewStyle;
-  userLink: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<MessageStyles>({
   container: {
     width: '100%',
     flexDirection: 'row',
@@ -17,7 +10,11 @@ export const styles = StyleSheet.create<Styles>({
     paddingTop: 4,
     paddingBottom: 8
   },
-  textContainer: { flex: 1, paddingLeft: 14, paddingTop: 3 },
+  textContainer: {
+    flex: 1,
+    paddingLeft: 14,
+    paddingTop: 3
+  },
   username: {
     lineHeight: 14,
     color: colors.COLOR_SECONDARY,

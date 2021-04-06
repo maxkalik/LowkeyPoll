@@ -1,5 +1,5 @@
+import { TextStyle, ViewStyle } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import React from 'react';
 import {
   MainStackParamList,
   MainStackScreenProps
@@ -19,4 +19,11 @@ export type RootScreenNavigationProp = StackNavigationProp<
 export interface RootStackScreenProps {
   mainStack: React.FC<MainStackScreenProps>;
   modal: React.FC<ModalScreenProps>;
+}
+
+export interface RootStackHeadersStyles {
+  headerStyle: ViewStyle;
+  headerRight: TextStyle;
+  headerRightContainerStyle: ViewStyle;
+  headerLeftContainerStyle: ViewStyle;
 }

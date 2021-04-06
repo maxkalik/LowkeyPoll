@@ -1,7 +1,7 @@
 import users from './users';
-import { ChatItem } from './types';
+import { ChatItemProps } from '../components/ChatItem/types';
 
-const messages: ChatItem[] = [
+const messages: ChatItemProps[] = [
   {
     ...users.ilonaMarly,
     text: 'Guys, who is going?'

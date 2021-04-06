@@ -1,12 +1,8 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../utils/constants';
-interface Styles {
-  container: ViewStyle;
-  title: TextStyle;
-  touchableIconContainer: ViewStyle;
-}
+import { OptionStyles } from './types';
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<OptionStyles>({
   container: {
     borderRadius: 12,
     overflow: 'hidden',

@@ -1,14 +1,8 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../src/utils/constants';
+import { WidgetHeaderStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  descriptionContainer: ViewStyle;
-  title: TextStyle;
-  userName: TextStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<WidgetHeaderStyles>({
   container: {
     flexDirection: 'row',
     alignItems: 'center',

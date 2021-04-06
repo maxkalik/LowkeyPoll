@@ -1,13 +1,8 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../src/utils/constants';
+import { IconLabelStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  icon: ViewStyle;
-  title: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<IconLabelStyles>({
   container: {
     flex: 1,
     height: 56,

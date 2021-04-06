@@ -1,12 +1,8 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors } from '../../../src/utils/constants';
+import { HomeScreenStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  keyboardAvoidingView: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<HomeScreenStyles>({
   container: {
     backgroundColor: colors.COLOR_BACKGROUND,
     flex: 1,

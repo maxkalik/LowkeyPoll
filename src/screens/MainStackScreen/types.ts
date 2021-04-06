@@ -1,3 +1,4 @@
+import { ViewStyle } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import {
@@ -24,3 +25,9 @@ export type MainScreenNavigationProp = StackNavigationProp<
   MainStackParamList,
   'Home'
 >;
+
+export interface HeadersStyles {
+  headerStyle: ViewStyle;
+  headerRightContainerStyle: ViewStyle;
+  headerLeftContainerStyle: ViewStyle;
+}

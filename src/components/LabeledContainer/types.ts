@@ -6,3 +6,7 @@ export interface LabeledContainerProps extends LabelProps {
   children: React.ReactNode;
   style?: ViewStyle;
 }
+
+export interface LabeledContainerStyles {
+  container: ViewStyle;
+}

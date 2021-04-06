@@ -1,14 +1,8 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, gradients } from '../../../src/utils/constants';
+import { ModalContainerStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  gradient: ViewStyle;
-  scrollViewContent: ViewStyle;
-  scrollView: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<ModalContainerStyles>({
   container: {
     flex: 1,
     alignItems: 'center',

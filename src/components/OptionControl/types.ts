@@ -1,4 +1,5 @@
-import { GestureResponderEvent } from 'react-native';
+import { GestureResponderEvent, TextStyle, ViewStyle } from 'react-native';
+
 export interface OptionControlProps {
   labelLeftTitle: string;
   labelRightTitle?: string;
@@ -6,4 +7,10 @@ export interface OptionControlProps {
   items: string[] | [];
   onCloseOption: (i: number) => void;
   onChangeOptionText: (value: string, i: number) => void;
+}
+
+export interface OptionControlStyles {
+  container: ViewStyle;
+  touchableContainer: ViewStyle;
+  button: TextStyle;
 }

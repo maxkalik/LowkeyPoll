@@ -1,5 +1,9 @@
-import { StyleProp, GestureResponderEvent, TextStyle } from 'react-native';
-// import { colors } from '../../../utils/constants';
+import {
+  StyleProp,
+  GestureResponderEvent,
+  ViewStyle,
+  TextStyle
+} from 'react-native';
 
 export interface TouchableTextProps {
   onPress?: (event: GestureResponderEvent) => void;
@@ -8,4 +12,13 @@ export interface TouchableTextProps {
   title: string;
   weight?: 'regular' | 'medium' | 'semiBold';
   isDisable?: boolean;
+}
+
+export interface TouchableTextStyles {
+  container: ViewStyle;
+  active: TextStyle;
+  regular: TextStyle;
+  medium: TextStyle;
+  semiBold: TextStyle;
+  disabled: TextStyle;
 }

@@ -1,19 +1,14 @@
-import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { StyleSheet, TextStyle } from 'react-native';
 import { colors, fonts } from '../../../../src/utils/constants';
+import { LabelStyles } from './types';
 
-interface Styles {
-  container: TextStyle;
-  left: TextStyle;
-  right: TextStyle;
-}
-
-const baseLabelTextStyle = {
+const baseLabelTextStyle: TextStyle = {
   fontSize: 12,
   color: colors.COLOR_SECONDARY,
   fontFamily: fonts.POPPINS.medium
 };
 
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<LabelStyles>({
   container: {
     flexDirection: 'row',
     flexWrap: 'nowrap',

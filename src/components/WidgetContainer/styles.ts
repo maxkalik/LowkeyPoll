@@ -1,15 +1,11 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { gradients } from '../../../src/utils/constants';
+import { WidgetContainerStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  gradient: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<WidgetContainerStyles>({
   container: {
     borderRadius: 25,
-    marginTop: 10
+    marginVertical: 8
   },
   gradient: {
     flex: 1,
@@ -20,5 +16,10 @@ export const styles = StyleSheet.create<Styles>({
     paddingBottom: 20
   }
 });
+
+export const gradientCoordinates = {
+  start: { x: 0.0, y: 0.0 },
+  end: { x: 0.5, y: 1.0 }
+};
 
 export const gradientColors = gradients.GRADIENT_WIDGET;

@@ -1,13 +1,8 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors } from '../../utils/constants';
+import { HeadersStyles } from './types';
 
-interface Styles {
-  headerStyle: ViewStyle;
-  headerRightContainerStyle: ViewStyle;
-  headerLeftContainerStyle: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<HeadersStyles>({
   headerStyle: {
     backgroundColor: colors.COLOR_DARK,
     shadowRadius: 0,

@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { MainStackParamList } from './types';
 import HomeScreen from '../HomeScreen/HomeScreen';
 import { TouchableIcon, UserPic, HeaderTitle } from '../../components/common';
-import { users } from '../../data';
+import { currentUser } from '../../data';
 import { styles } from './styles';
 
 const MainStack = createStackNavigator<MainStackParamList>();
@@ -12,7 +12,7 @@ const HeaderTitleComponent = () => (
   <HeaderTitle title="Lowkey Squad" subTitle="1 member • 1 online" />
 );
 const HeaderRightComponent = () => (
-  <UserPic size="medium" source={users.milaSpencer.userpicSource} />
+  <UserPic size="medium" source={currentUser.userpicSource} />
 );
 
 const MainStackScreen: React.FC = (): JSX.Element => (

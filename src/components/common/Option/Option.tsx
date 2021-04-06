@@ -10,7 +10,10 @@ const Option: React.FC<OptionProps> = ({
   onChangeText
 }): JSX.Element => (
   <View style={styles.container}>
-    <TextInput style={styles.title} onChangeText={onChangeText}>
+    <TextInput
+      keyboardAppearance="dark"
+      style={styles.title}
+      onChangeText={onChangeText}>
       {title}
     </TextInput>
     <TouchableIcon

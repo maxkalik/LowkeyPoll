@@ -1,14 +1,8 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../src/utils/constants';
+import { PollWidgetStyles } from './types';
 
-interface Styles {
-  content: ViewStyle;
-  pollTitle: TextStyle;
-  pollItemContainer: ViewStyle;
-  pollItemText: TextStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<PollWidgetStyles>({
   content: {
     paddingTop: 12
   },

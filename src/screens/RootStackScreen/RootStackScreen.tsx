@@ -12,8 +12,11 @@ import {
   RootScreenNavigationProp
 } from './types';
 import { MainScreenRouteProp } from '../MainStackScreen/types';
-import { PollTypes } from '../../context/types';
-import { styles } from './styles';
+import {
+  parsePollFromNavigationRouteParam,
+  checkCreateAvailability
+} from './helper';
+import { styles, headerStatusBarHeight, cardStyle } from './styles';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 const HeaderTitleComponent = () => <HeaderTitle title="New Poll" />;
@@ -35,28 +38,34 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
     }
   };
 
-  const parsePollFromNavigationRouteParam = ({
-    params
-  }: MainScreenRouteProp): PollTypes => {
-    const question = JSON.stringify(params.question);
-    const optionsJson = JSON.stringify(params.options);
-    const options = JSON.parse(optionsJson);
+  const options = ({
+    navigation,
+    route
+  }: {
+    navigation: RootScreenNavigationProp;
+    route: MainScreenRouteProp;
+  }) => {
     return {
-      title: question.replace(/['"]+/g, ''),
-      items: options.map((text: string) => {
-        return { text };
-      }),
-      votes: 0
+      headerTransparent: true,
+      headerStatusBarHeight: headerStatusBarHeight,
+      cardStyle: cardStyle,
+      headerRightContainerStyle: styles.headerRightContainerStyle,
+      headerLeftContainerStyle: styles.headerLeftContainerStyle,
+      headerStyle: styles.headerStyle,
+      headerTitle: HeaderTitleComponent,
+      headerLeft: () => (
+        <TouchableIcon name="close large" onPress={() => navigation.goBack()} />
+      ),
+      headerRight: () => (
+        <TouchableText
+          title="Create"
+          style={styles.headerRight}
+          weight="medium"
+          isDisable={route.params && !checkCreateAvailability(route)}
+          onPress={() => createPoll(navigation, route)}
+        />
+      )
     };
-  };
-
-  const checkCreateAvailability = (route: MainScreenRouteProp): boolean => {
-    const poll = parsePollFromNavigationRouteParam(route);
-    if (poll.title.length > 0 && poll.items.length > 1) {
-      return poll.items[0].text.length > 0 && poll.items[1].text.length > 0;
-    } else {
-      return false;
-    }
   };
 
   return (
@@ -66,38 +75,7 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
         component={mainStack}
         options={{ headerShown: false }}
       />
-      <RootStack.Screen
-        name="Modal"
-        component={modal}
-        options={({ navigation, route }) => {
-          return {
-            headerTransparent: true,
-            headerStatusBarHeight: 53,
-            cardStyle: { backgroundColor: 'transparent' },
-            headerRightContainerStyle: styles.headerRightContainerStyle,
-            headerLeftContainerStyle: styles.headerLeftContainerStyle,
-            headerStyle: styles.headerStyle,
-            headerTitle: HeaderTitleComponent,
-            headerLeft: () => (
-              <TouchableIcon
-                name="close large"
-                onPress={() => navigation.goBack()}
-              />
-            ),
-            headerRight: () => (
-              <TouchableText
-                title="Create"
-                style={styles.headerRight}
-                weight="medium"
-                isDisable={
-                  route.params !== undefined && !checkCreateAvailability(route)
-                }
-                onPress={() => createPoll(navigation, route)}
-              />
-            )
-          };
-        }}
-      />
+      <RootStack.Screen name="Modal" component={modal} options={options} />
     </RootStack.Navigator>
   );
 };

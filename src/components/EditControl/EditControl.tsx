@@ -11,20 +11,18 @@ const EditControl: React.FC<EditControlProps> = ({
   onChangeText,
   placeholder,
   value
-}) => {
-  return (
-    <LabeledContainer leftText={labelLeftTitle} rightText={labelRightTitle}>
-      <TextInput
-        style={styles.textField}
-        onChangeText={onChangeText}
-        placeholder={placeholder}
-        placeholderTextColor={colors.COLOR_SECONDARY}
-        keyboardAppearance="dark"
-        value={value}
-        multiline
-      />
-    </LabeledContainer>
-  );
-};
+}) => (
+  <LabeledContainer leftText={labelLeftTitle} rightText={labelRightTitle}>
+    <TextInput
+      style={styles.textField}
+      onChangeText={onChangeText}
+      placeholder={placeholder}
+      placeholderTextColor={colors.COLOR_SECONDARY}
+      keyboardAppearance="dark"
+      value={value}
+      multiline
+    />
+  </LabeledContainer>
+);
 
 export default EditControl;

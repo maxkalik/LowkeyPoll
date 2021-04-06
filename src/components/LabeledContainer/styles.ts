@@ -1,9 +1,9 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { LabeledContainerStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
-  container: { width: '100%', flexDirection: 'column' }
+export const styles = StyleSheet.create<LabeledContainerStyles>({
+  container: {
+    width: '100%',
+    flexDirection: 'column'
+  }
 });

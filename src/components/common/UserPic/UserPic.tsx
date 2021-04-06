@@ -8,12 +8,10 @@ const UserPic: React.FC<UserPicProps> = ({
   size,
   style,
   onPress
-}): JSX.Element => {
-  return (
-    <TouchableOpacity style={style} onPress={onPress}>
-      <Image style={styles[size || 'large']} source={source} />
-    </TouchableOpacity>
-  );
-};
+}): JSX.Element => (
+  <TouchableOpacity style={style} onPress={onPress}>
+    <Image style={styles[size || 'large']} source={source} />
+  </TouchableOpacity>
+);
 
 export default UserPic;

@@ -1,16 +1,8 @@
-import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../../src/utils/constants';
+import { TouchableTextStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  active: TextStyle;
-  regular: TextStyle;
-  medium: TextStyle;
-  semiBold: TextStyle;
-  disabled: TextStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<TouchableTextStyles>({
   container: {},
   regular: {
     fontFamily: fonts.POPPINS.regular

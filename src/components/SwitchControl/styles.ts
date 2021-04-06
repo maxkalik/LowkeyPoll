@@ -1,14 +1,8 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors } from '../../../src/utils/constants';
+import { SwitchControlStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  switchView: ViewStyle;
-  withBorder: ViewStyle;
-  withoutBorder: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<SwitchControlStyles>({
   container: {
     flexDirection: 'row',
     flexWrap: 'nowrap',

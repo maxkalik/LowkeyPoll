@@ -1,38 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar, KeyboardAvoidingView, SafeAreaView } from 'react-native';
-import { ChatScrollView, ChatBar, Message, PollWidget } from '../../components';
+import { ChatScrollView, ChatBar, ChatItem } from '../../components';
 import { usePollState } from '../../context/PollContext';
 import { HomeScreenProps } from './types';
 import { styles } from './styles';
 import { users, messages, currentUser } from '../../data';
-import { ChatItem } from '../../data/types';
-
-const renderMessage = (message: ChatItem, i: React.Key): JSX.Element => {
-  if (message.poll) {
-    return (
-      <PollWidget
-        key={i}
-        headerUsername={message.username}
-        userpicSource={message.userpicSource}
-        voteCounter={message.poll.votes}
-        title={message.poll.title}
-        items={message.poll.items}
-      />
-    );
-  } else {
-    return (
-      <Message
-        key={i}
-        username={message.username}
-        userpicSource={message.userpicSource}
-        text={message.text || ''}
-      />
-    );
-  }
-};
+import { ChatItemProps } from '../../components/ChatItem/types';
 
 const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
-  const [messagesList, setMessagesList] = useState<ChatItem[]>(messages);
+  const [messagesList, setMessagesList] = useState<ChatItemProps[]>(messages);
   const pollContext = usePollState();
 
   const createMessage = (text: string) => {
@@ -41,7 +17,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
 
   useEffect(() => {
     if (pollContext.poll.title) {
-      const userMessage: ChatItem = {
+      const userMessage: ChatItemProps = {
         ...users.milaSpencer,
         poll: pollContext.poll
       };
@@ -61,7 +37,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
         style={styles.keyboardAvoidingView}>
         <ChatScrollView>
           {messagesList.length &&
-            messagesList.map((message, i) => renderMessage(message, i))}
+            messagesList.map((message, i) => <ChatItem {...message} key={i} />)}
         </ChatScrollView>
         <ChatBar navigation={navigation} onPressSend={createMessage} />
       </KeyboardAvoidingView>
