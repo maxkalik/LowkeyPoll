@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { WidgetContainer, WidgetHeader } from '..';
 import {
   PollItemProps,
-  PollWidgetContentProps,
+  PollWidgetComponentProps,
   PollWidgetProps
 } from './types';
 import { styles } from './styles';
@@ -14,7 +14,7 @@ const PollItem: React.FC<PollItemProps> = ({ text, onPress }): JSX.Element => (
   </TouchableOpacity>
 );
 
-const PollWidgetContent: React.FC<PollWidgetContentProps> = ({
+const PollWidgetContent: React.FC<PollWidgetComponentProps> = ({
   title,
   items,
   opPressPollItem

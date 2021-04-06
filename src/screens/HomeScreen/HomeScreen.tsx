@@ -4,7 +4,8 @@ import { ChatScrollView, ChatBar, Message, PollWidget } from '../../components';
 import { usePollState } from '../../context/PollContext';
 import { HomeScreenProps } from './types';
 import { styles } from './styles';
-import { messages, users, ChatItem } from '../../utils/dataSource';
+import { users, messages, currentUser } from '../../data';
+import { ChatItem } from '../../data/types';
 
 const renderMessage = (message: ChatItem, i: React.Key): JSX.Element => {
   if (message.poll) {
@@ -34,6 +35,10 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
   const [messagesList, setMessagesList] = useState<ChatItem[]>(messages);
   const pollContext = usePollState();
 
+  const createMessage = (text: string) => {
+    setMessagesList([...messagesList, { ...currentUser, text }]);
+  };
+
   useEffect(() => {
     if (pollContext.poll.title) {
       const userMessage: ChatItem = {
@@ -58,7 +63,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }): JSX.Element => {
           {messagesList.length &&
             messagesList.map((message, i) => renderMessage(message, i))}
         </ChatScrollView>
-        <ChatBar navigation={navigation} />
+        <ChatBar navigation={navigation} onPressSend={createMessage} />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

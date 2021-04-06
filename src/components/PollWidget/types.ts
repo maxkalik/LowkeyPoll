@@ -6,8 +6,11 @@ export interface PollItemProps {
 
 export interface PollWidgetContentProps {
   title: string;
-  opPressPollItem: (value: string) => void;
   items: PollItemProps[];
+}
+
+export interface PollWidgetComponentProps extends PollWidgetContentProps {
+  opPressPollItem: (value: string) => void;
 }
 
 export interface PollWidgetProps extends PollWidgetContentProps {

@@ -2,9 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { MainStackParamList } from './types';
 import HomeScreen from '../HomeScreen/HomeScreen';
-// import PollScreen from '../PollScreen/PollScreen';
 import { TouchableIcon, UserPic, HeaderTitle } from '../../components/common';
-import { users } from '../../utils/dataSource';
+import { users } from '../../data';
 import { styles } from './styles';
 
 const MainStack = createStackNavigator<MainStackParamList>();

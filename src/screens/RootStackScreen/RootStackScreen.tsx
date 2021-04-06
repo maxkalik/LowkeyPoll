@@ -6,7 +6,12 @@ import {
   HeaderTitle
 } from '../../components/common';
 import { usePollState } from '../../context/PollContext';
-import { RootStackParamList, RootStackScreenProps } from './types';
+import {
+  RootStackParamList,
+  RootStackScreenProps,
+  RootScreenNavigationProp
+} from './types';
+import { MainScreenRouteProp } from '../MainStackScreen/types';
 import { PollTypes } from '../../context/types';
 import { styles } from './styles';
 
@@ -19,7 +24,10 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
 }): JSX.Element => {
   const pollContext = usePollState();
 
-  const createPoll = (navigation, route) => {
+  const createPoll = (
+    navigation: RootScreenNavigationProp,
+    route: MainScreenRouteProp
+  ) => {
     if (pollContext.setPoll) {
       const poll = parsePollFromNavigationRouteParam(route);
       pollContext.setPoll(poll);
@@ -27,7 +35,9 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
     }
   };
 
-  const parsePollFromNavigationRouteParam = ({ params }): PollTypes => {
+  const parsePollFromNavigationRouteParam = ({
+    params
+  }: MainScreenRouteProp): PollTypes => {
     const question = JSON.stringify(params.question);
     const optionsJson = JSON.stringify(params.options);
     const options = JSON.parse(optionsJson);
@@ -40,7 +50,7 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
     };
   };
 
-  const checkCreateAvailability = (route): boolean => {
+  const checkCreateAvailability = (route: MainScreenRouteProp): boolean => {
     const poll = parsePollFromNavigationRouteParam(route);
     if (poll.title.length > 0 && poll.items.length > 1) {
       return poll.items[0].text.length > 0 && poll.items[1].text.length > 0;

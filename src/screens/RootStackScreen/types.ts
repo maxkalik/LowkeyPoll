@@ -8,7 +8,7 @@ import { ModalScreenProps } from '../ModalScreen/types';
 
 export type RootStackParamList = {
   Main: StackNavigationProp<MainStackParamList>;
-  Modal: undefined;
+  Modal: { question: string; options: string[] };
 };
 
 export type RootScreenNavigationProp = StackNavigationProp<

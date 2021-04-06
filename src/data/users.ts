@@ -1,15 +1,6 @@
-import { ImageSourcePropType } from 'react-native';
-import { PollTypes } from '../context/types';
-interface UsersTypes {
-  [key: string]: UserType;
-}
+import { UsersTypes } from './types';
 
-interface UserType {
-  username: string;
-  userpicSource: ImageSourcePropType;
-}
-
-export const users: UsersTypes = {
+const users: UsersTypes = {
   ilonaMarly: {
     username: 'Ilona  Marly',
     userpicSource: require('../assets/png/ilona-marly.png')
@@ -59,43 +50,5 @@ export const users: UsersTypes = {
     userpicSource: require('../assets/png/alice-megan.png')
   }
 };
-export interface ChatItem extends UserType {
-  text?: string;
-  poll?: PollTypes;
-}
 
-export const messages: ChatItem[] = [
-  {
-    ...users.ilonaMarly,
-    text: 'Guys, who is going?'
-  },
-  {
-    ...users.keisyLensly,
-    text: 'We are all ready to go!'
-  },
-  {
-    ...users.maxKalik,
-    text: 'I’m in! Also could grab some sandwiches if you want 🥪'
-  },
-  {
-    ...users.elzaMitre,
-    text:
-      'I’m in also! Mike’s Diner would be a good choice 🔥🔥🔥 how about everyone else? Any ideas?'
-  },
-  {
-    ...users.mikePhillips,
-    text: 'Sounds good to me!!!'
-  },
-  {
-    ...users.edwinBass,
-    text: '@kellyhodges are you in???'
-  },
-  {
-    ...users.kellyHodges,
-    text: 'Nice! 12 ppl in total. Let’s gather at the metro station! 🚆🚆🚆'
-  },
-  {
-    ...users.bradFreeman,
-    text: 'Okie dokie!!'
-  }
-];
+export default users;

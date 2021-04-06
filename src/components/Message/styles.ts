@@ -14,10 +14,12 @@ export const styles = StyleSheet.create<Styles>({
     width: '100%',
     flexDirection: 'row',
     flexWrap: 'nowrap',
-    paddingVertical: 4
+    paddingTop: 4,
+    paddingBottom: 8
   },
   textContainer: { flex: 1, paddingLeft: 14, paddingTop: 3 },
   username: {
+    lineHeight: 14,
     color: colors.COLOR_SECONDARY,
     fontSize: 12,
     fontFamily: fonts.POPPINS.semibold,
@@ -26,7 +28,7 @@ export const styles = StyleSheet.create<Styles>({
   text: {
     color: colors.COLOR_FOREGROUND,
     fontSize: 15,
-    lineHeight: 22,
+    lineHeight: 24,
     fontFamily: fonts.POPPINS.regular,
     flexWrap: 'wrap',
     width: '100%'

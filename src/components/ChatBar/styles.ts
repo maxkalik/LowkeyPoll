@@ -1,12 +1,8 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors, fonts } from '../../../src/utils/constants';
+import { ChatBarStyles } from './types';
 
-interface Styles {
-  container: ViewStyle;
-  textInput: ViewStyle;
-}
-
-export const styles = StyleSheet.create<Styles>({
+export const styles = StyleSheet.create<ChatBarStyles>({
   container: {
     flexDirection: 'row',
     paddingHorizontal: 15,
@@ -23,5 +19,11 @@ export const styles = StyleSheet.create<Styles>({
     fontFamily: fonts.POPPINS.regular,
     color: colors.COLOR_FOREGROUND,
     paddingHorizontal: 15
+  },
+  sendButton: {
+    fontFamily: fonts.POPPINS.medium,
+    position: 'absolute',
+    bottom: -10,
+    right: 30
   }
 });
