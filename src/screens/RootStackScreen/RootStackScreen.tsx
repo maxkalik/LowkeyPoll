@@ -42,8 +42,8 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
 
   const checkCreateAvailability = (route): boolean => {
     const poll = parsePollFromNavigationRouteParam(route);
-    if (poll.title.length > 0 && poll.items.length > 0) {
-      return poll.items[0].text.length > 0;
+    if (poll.title.length > 0 && poll.items.length > 1) {
+      return poll.items[0].text.length > 0 && poll.items[1].text.length > 0;
     } else {
       return false;
     }
@@ -60,7 +60,6 @@ const RootStackScreen: React.FC<RootStackScreenProps> = ({
         name="Modal"
         component={modal}
         options={({ navigation, route }) => {
-          console.log(route.params);
           return {
             headerTransparent: true,
             headerStatusBarHeight: 53,

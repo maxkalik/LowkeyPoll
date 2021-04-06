@@ -19,16 +19,16 @@ const ModalScreen: React.FC<ModalScreenProps> = ({ navigation }) => {
       question,
       options
     });
-  }, [question, options]);
+  }, [question, options, navigation]);
 
   const changeQuestion = (value: string) => {
     setQuestion(value);
   };
 
   const changeOption = (value: string, i: number) => {
-    const optionsCopy = options;
-    optionsCopy[i] = value;
-    setOptions(optionsCopy);
+    const updatedOptions = options;
+    updatedOptions[i] = value;
+    setOptions([...updatedOptions]);
   };
 
   const toggleAnonymous = () => {
@@ -56,8 +56,6 @@ const ModalScreen: React.FC<ModalScreenProps> = ({ navigation }) => {
     const updatedOptions = optionsCopy;
     setOptions([...updatedOptions]);
   };
-
-  console.log(options);
 
   return (
     <ModalContainer>
