@@ -14,6 +14,7 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'react/prefer-es6-class': [1, 'always'],
     'react/display-name': [0],
-    'react/prop-types': [0]
+    'react/prop-types': [0],
+    'no-bitwise': [0]
   }
 };
