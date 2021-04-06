@@ -1,4 +1,4 @@
-# Lowkey concept
+# Lowkey Poll concept
 
 ## Task
 
