@@ -7,14 +7,27 @@ import { styles } from './styles';
 const OptionControl: React.FC<OptionControlProps> = ({
   labelLeftTitle,
   labelRightTitle,
-  onButtonPress
+  onButtonPress,
+  onChangeOptionText,
+  onCloseOption,
+  items
 }) => {
   return (
     <LabeledContainer
       style={styles.container}
       leftText={labelLeftTitle}
       rightText={labelRightTitle}>
-      <Option title="Option" onClosePress={() => console.log('pressed')} />
+      {items.map((text: string, i: React.Key) => {
+        // console.log(items);
+        return (
+          <Option
+            key={i}
+            title={text}
+            onChangeText={value => onChangeOptionText(value, Number(i))}
+            onClosePress={() => onCloseOption(Number(i))}
+          />
+        );
+      })}
       <TouchableText
         containerStyle={styles.touchableContainer}
         style={styles.button}

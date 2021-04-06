@@ -3,17 +3,15 @@ import { colors, fonts } from '../../../../src/utils/constants';
 
 interface Styles {
   container: ViewStyle;
-  text: TextStyle;
+  active: TextStyle;
   regular: TextStyle;
   medium: TextStyle;
   semiBold: TextStyle;
+  disabled: TextStyle;
 }
 
 export const styles = StyleSheet.create<Styles>({
   container: {},
-  text: {
-    color: colors.COLOR_BLUE
-  },
   regular: {
     fontFamily: fonts.POPPINS.regular
   },
@@ -22,5 +20,11 @@ export const styles = StyleSheet.create<Styles>({
   },
   semiBold: {
     fontFamily: fonts.POPPINS.semibold
+  },
+  active: {
+    color: colors.COLOR_BLUE
+  },
+  disabled: {
+    color: colors.COLOR_SECONDARY
   }
 });

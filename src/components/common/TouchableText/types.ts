@@ -7,5 +7,5 @@ export interface TouchableTextProps {
   containerStyle?: StyleProp<TextStyle>;
   title: string;
   weight?: 'regular' | 'medium' | 'semiBold';
-  // foregroundColor?: string | 'white';
+  isDisable?: boolean;
 }

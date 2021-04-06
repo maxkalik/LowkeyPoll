@@ -1,4 +1,15 @@
-export const users = {
+import { ImageSourcePropType } from 'react-native';
+import { PollTypes } from '../context/types';
+interface UsersTypes {
+  [key: string]: UserType;
+}
+
+interface UserType {
+  username: string;
+  userpicSource: ImageSourcePropType;
+}
+
+export const users: UsersTypes = {
   ilonaMarly: {
     username: 'Ilona  Marly',
     userpicSource: require('../assets/png/ilona-marly.png')
@@ -48,8 +59,12 @@ export const users = {
     userpicSource: require('../assets/png/alice-megan.png')
   }
 };
+export interface ChatItem extends UserType {
+  text?: string;
+  poll?: PollTypes;
+}
 
-export const messages = [
+export const messages: ChatItem[] = [
   {
     ...users.ilonaMarly,
     text: 'Guys, who is going?'

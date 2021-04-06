@@ -29,20 +29,22 @@ const PollWidgetContent: React.FC<PollWidgetContentProps> = ({
 const PollWidget: React.FC<PollWidgetProps> = ({
   headerUsername,
   userpicSource,
-  circleLabel,
+  voteCounter,
   title,
   items
-}): JSX.Element => (
-  <WidgetContainer>
-    <WidgetHeader
-      title="Public Poll"
-      username={headerUsername}
-      userpicSource={userpicSource}
-      circleLabelTitle={circleLabel?.title}
-      circleLabelValue={circleLabel?.value}
-    />
-    <PollWidgetContent title={title} items={items} />
-  </WidgetContainer>
-);
+}): JSX.Element => {
+  return (
+    <WidgetContainer>
+      <WidgetHeader
+        title="Public Poll"
+        username={headerUsername}
+        userpicSource={userpicSource}
+        circleLabelTitle="votes"
+        circleLabelValue={String(voteCounter)}
+      />
+      <PollWidgetContent title={title} items={items} />
+    </WidgetContainer>
+  );
+};
 
 export default PollWidget;

@@ -8,12 +8,19 @@ const TouchableText: React.FC<TouchableTextProps> = ({
   style,
   containerStyle,
   weight,
+  isDisable,
   title
 }): JSX.Element => (
   <TouchableOpacity
+    disabled={isDisable}
     style={[styles.container, containerStyle]}
     onPress={onPress}>
-    <Text style={[styles.text, styles[weight || 'regular'], style]}>
+    <Text
+      style={[
+        isDisable ? styles.disabled : styles.active,
+        styles[weight || 'regular'],
+        style
+      ]}>
       {title}
     </Text>
   </TouchableOpacity>

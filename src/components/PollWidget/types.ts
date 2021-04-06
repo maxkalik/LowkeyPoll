@@ -1,5 +1,4 @@
 import { ImageSourcePropType } from 'react-native';
-import { CircleLabelProps } from '../common/CircleLabel/types';
 export interface PollItemProps {
   text: string;
 }
@@ -12,5 +11,5 @@ export interface PollWidgetContentProps {
 export interface PollWidgetProps extends PollWidgetContentProps {
   headerUsername: string;
   userpicSource: ImageSourcePropType;
-  circleLabel?: CircleLabelProps;
+  voteCounter: number;
 }
